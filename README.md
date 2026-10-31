@@ -43,3 +43,11 @@ I put the [timing and pin assignments](docs/architecture.md), [BLE protocol](doc
 The [schematic, PCB and BOM exports](hardware/archive-2026-07-29) are from an earlier revision. Some changes made on the bench are missing from those files, so they should not be used directly for fabrication. The differences are described in [hardware-notes.md](docs/hardware-notes.md).
 
 This is a lab prototype with hazardous voltage and a rotating motor. The overspeed trip is disabled in the saved firmware, and there are still control and protection issues to address. Read the [known issues](docs/validation.md#things-to-fix) before considering any powered use.
+
+## License
+
+The firmware, iOS app and build configuration use the [MIT License](LICENSE-MIT). The schematic, PCB, netlist and BOM files in `hardware/` use [CERN-OHL-P-2.0](LICENSE-CERN-OHL-P-2.0).
+
+The documentation, including the diagnostic notes, diagrams and demo media, is shared under [CC BY 4.0](LICENSE-CC-BY-4.0). Code examples in the documentation use MIT.
+
+Copyright (c) 2026 the three-phase-scr-motor-control contributors. These licenses cover our original project material; third-party tools and libraries keep their own licenses.
