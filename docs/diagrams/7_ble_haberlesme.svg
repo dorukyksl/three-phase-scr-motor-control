@@ -1,0 +1,93 @@
+<svg viewBox="0 0 1120 700" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="dn" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#2e7d32"/></marker>
+    <marker id="up" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#1565c0"/></marker>
+  </defs>
+  <rect width="1120" height="700" fill="#ffffff"/>
+
+  <text x="560" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#111">MOBİL HABERLEŞME ZİNCİRİ</text>
+  <text x="560" y="50" text-anchor="middle" font-size="12.5" fill="#666">iOS · CoreBluetooth · HM-10 şeffaf UART köprüsü · ATmega328P</text>
+
+  <!-- ===== DORT KATMAN ===== -->
+  <g>
+    <rect x="40" y="90" width="200" height="118" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2.4"/>
+    <text x="140" y="118" text-anchor="middle" font-size="15" font-weight="bold" fill="#0d47a1">iPhone</text>
+    <text x="140" y="140" text-anchor="middle" font-size="11.5" fill="#1565c0">SwiftUI arayüz</text>
+    <text x="140" y="158" text-anchor="middle" font-size="11.5" fill="#1565c0">BLEManager</text>
+    <text x="140" y="176" text-anchor="middle" font-size="11.5" fill="#1565c0">Telemetry çözümleyici</text>
+    <text x="140" y="196" text-anchor="middle" font-size="10.5" fill="#7aa3cc">CoreBluetooth</text>
+
+    <rect x="310" y="90" width="200" height="118" rx="8" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2.4"/>
+    <text x="410" y="118" text-anchor="middle" font-size="15" font-weight="bold" fill="#4a148c">BLE 4.0</text>
+    <text x="410" y="140" text-anchor="middle" font-size="11.5" fill="#6a1b9a">servis FFE0</text>
+    <text x="410" y="158" text-anchor="middle" font-size="11.5" fill="#6a1b9a">karakteristik FFE1</text>
+    <text x="410" y="180" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#6a1b9a">paket 20 bayt</text>
+    <text x="410" y="197" text-anchor="middle" font-size="10.5" fill="#9a7aa8">notify + write</text>
+
+    <rect x="580" y="90" width="200" height="118" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="2.4"/>
+    <text x="680" y="118" text-anchor="middle" font-size="15" font-weight="bold" fill="#e65100">HM-10</text>
+    <text x="680" y="140" text-anchor="middle" font-size="11.5" fill="#bf6516">CC2541</text>
+    <text x="680" y="158" text-anchor="middle" font-size="11.5" fill="#bf6516">şeffaf köprü</text>
+    <text x="680" y="180" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#bf6516">UART 9600</text>
+    <text x="680" y="197" text-anchor="middle" font-size="10.5" fill="#c99a6a">protokol bilmez</text>
+
+    <rect x="850" y="90" width="230" height="118" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2.4"/>
+    <text x="965" y="118" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b5e20">Arduino Uno</text>
+    <text x="965" y="140" text-anchor="middle" font-size="11.5" fill="#2e7d32">donanım UART D0/D1</text>
+    <text x="965" y="158" text-anchor="middle" font-size="11.5" fill="#2e7d32">satır tabanlı ayrıştırıcı</text>
+    <text x="965" y="180" text-anchor="middle" font-size="11.5" fill="#2e7d32">5 Hz telemetri</text>
+    <text x="965" y="197" text-anchor="middle" font-size="10.5" fill="#7aa87c">SoftwareSerial YOK</text>
+  </g>
+
+  <!-- baglanti cizgileri -->
+  <line x1="240" y1="149" x2="310" y2="149" stroke="#999" stroke-width="2"/>
+  <line x1="510" y1="149" x2="580" y2="149" stroke="#999" stroke-width="2"/>
+  <line x1="780" y1="149" x2="850" y2="149" stroke="#999" stroke-width="2"/>
+  <text x="275" y="142" text-anchor="middle" font-size="9.5" fill="#999">radyo</text>
+  <text x="545" y="142" text-anchor="middle" font-size="9.5" fill="#999">radyo</text>
+  <text x="815" y="142" text-anchor="middle" font-size="9.5" fill="#999">seri</text>
+
+  <!-- ===== ASAGI: TELEMETRI ===== -->
+  <rect x="40" y="248" width="1040" height="150" rx="8" fill="#f6fbf7" stroke="#2e7d32" stroke-width="2"/>
+  <path d="M1000,270 L120,270" fill="none" stroke="#2e7d32" stroke-width="3" marker-end="url(#dn)"/>
+  <text x="1010" y="266" text-anchor="end" font-size="12.5" font-weight="bold" fill="#1b5e20">TELEMETRİ  ·  Arduino → telefon  ·  5 Hz</text>
+
+  <text x="60" y="300" font-size="11.5" font-family="monospace" fill="#20401f">S,95,20,322,5000,1,1,3,12,0,0,0,0,1470,291\n</text>
+  <g font-size="10.5" fill="#5a8a5c">
+    <text x="60" y="322">α · hedef α · V_dc×10 · frekans×100 · senkron · ateşleme · sektör ·</text>
+    <text x="60" y="338">gürültü · hata · geçersiz komut · mod · doluluk · <tspan font-weight="bold" fill="#1b5e20">devir</tspan> · tako ADC</text>
+  </g>
+
+  <rect x="600" y="288" width="460" height="94" rx="6" fill="#fff" stroke="#a5c9a7" stroke-width="1.4"/>
+  <text x="618" y="308" font-size="11.5" font-weight="bold" fill="#1b5e20">27 baytlık satır → 2 BLE paketi</text>
+  <text x="618" y="328" font-size="10.5" fill="#4a6b4c">Paket sınırı satır sınırıyla çakışmaz. Uygulama gelen</text>
+  <text x="618" y="344" font-size="10.5" fill="#4a6b4c">baytları tamponlar, <tspan font-family="monospace">0x0A</tspan> görünce satırı keser.</text>
+  <text x="618" y="366" font-size="10.5" font-weight="bold" fill="#c62828">Tampon String değil, bayt dizisi olmalı —</text>
+  <text x="618" y="380" font-size="10.5" font-weight="bold" fill="#c62828">Swift'te &quot;\r\n&quot; tek bir Character'dır.</text>
+
+  <!-- ===== YUKARI: KOMUT ===== -->
+  <rect x="40" y="418" width="1040" height="150" rx="8" fill="#f5f9fd" stroke="#1565c0" stroke-width="2"/>
+  <path d="M120,440 L1000,440" fill="none" stroke="#1565c0" stroke-width="3" marker-end="url(#up)"/>
+  <text x="110" y="436" font-size="12.5" font-weight="bold" fill="#0d47a1">KOMUT  ·  telefon → Arduino</text>
+
+  <g font-size="11.5" font-family="monospace" fill="#20344a">
+    <text x="60" y="472">A&lt;sayı&gt;\n</text>  <text x="150" y="472" font-family="Helvetica" font-size="11">tetikleme açısı 20…150°</text>
+    <text x="60" y="494">B&lt;sayı&gt;\n</text>  <text x="150" y="494" font-family="Helvetica" font-size="11">burst doluluk %0…100</text>
+    <text x="60" y="516">F\n</text>          <text x="150" y="516" font-family="Helvetica" font-size="11">faz kontrolü moduna dön</text>
+    <text x="360" y="472">E\n</text>         <text x="450" y="472" font-family="Helvetica" font-size="11">ateşlemeyi aç (α ≥ 140 şartı)</text>
+    <text x="360" y="494">D\n</text>         <text x="450" y="494" font-family="Helvetica" font-size="11">ateşlemeyi kapat</text>
+    <text x="360" y="516">?\n</text>         <text x="450" y="516" font-family="Helvetica" font-size="11">anlık telemetri iste</text>
+  </g>
+
+  <rect x="700" y="458" width="360" height="94" rx="6" fill="#fff" stroke="#a8c4e0" stroke-width="1.4"/>
+  <text x="718" y="478" font-size="11.5" font-weight="bold" fill="#0d47a1">H\n  —  heartbeat, saniyede bir</text>
+  <text x="718" y="498" font-size="10.5" fill="#3d5a75">İlk H'den sonra emniyet devreye girer:</text>
+  <text x="718" y="514" font-size="10.5" fill="#3d5a75">3 saniye komut gelmezse ateşleme kapanır.</text>
+  <text x="718" y="536" font-size="10.5" font-weight="bold" fill="#c62828">Uygulama kapanırsa motor durur.</text>
+
+  <!-- ===== ALT NOT ===== -->
+  <rect x="40" y="588" width="1040" height="76" rx="8" fill="#fff8e1" stroke="#f57f17" stroke-width="1.6"/>
+  <text x="60" y="612" font-size="12.5" font-weight="bold" fill="#e65100">Komutlar neden satır sonlu ve tam eşlemeli?</text>
+  <text x="60" y="634" font-size="11" fill="#6b4a1a">BLE koptuğunda HM-10 AT moduna döner ve UART'a cevap yazar. Tek karakter komut sayılsaydı bu metindeki</text>
+  <text x="60" y="652" font-size="11" fill="#6b4a1a">herhangi bir <tspan font-family="monospace" font-weight="bold">E</tspan> harfi ateşlemeyi açardı — geliştirme sırasında saniyede ~35 kez yaşandı. Artık satırın tamamı eşleşmeli.</text>
+</svg>

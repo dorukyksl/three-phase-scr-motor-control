@@ -1,0 +1,37 @@
+# Operating system and editor state
+.DS_Store
+._*
+Thumbs.db
+.vscode/
+.idea/
+
+# Xcode local state and build products
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+*.xcuserdatad/
+*.ipa
+*.dSYM/
+*.xcarchive
+
+# Arduino build products
+*.elf
+*.hex
+*.o
+*.a
+*.bin
+*.map
+
+# Local tools, dependencies and credentials
+node_modules/
+.venv/
+.env
+.env.*
+*.p12
+*.mobileprovision
+*.pem
+
+# Temporary office files
+~$*
+

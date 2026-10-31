@@ -1,0 +1,39 @@
+name: Compile Arduino sketches
+
+on:
+  push:
+    paths:
+      - "firmware/**"
+      - ".github/workflows/firmware.yml"
+  pull_request:
+    paths:
+      - "firmware/**"
+      - ".github/workflows/firmware.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install Arduino CLI
+        uses: arduino/setup-arduino-cli@81d310742121c928ea9c8bbd407b4217b432ae02
+        with:
+          version: "1.5.1"
+      - name: Install AVR board core
+        run: |
+          arduino-cli core update-index
+          arduino-cli core install arduino:avr@1.8.8
+      - name: Compile all supplied Uno sketches
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' sketch; do
+            arduino-cli compile --fqbn arduino:avr:uno "$(dirname "$sketch")"
+          done < <(find firmware -name '*.ino' -print0)
+

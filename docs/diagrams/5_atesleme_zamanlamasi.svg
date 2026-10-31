@@ -1,0 +1,94 @@
+<svg viewBox="0 0 1120 640" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,sans-serif">
+  <defs>
+    <clipPath id="cs"><rect x="130" y="80" width="975" height="140"/></clipPath>
+    <marker id="d1" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 z" fill="#e65100"/></marker>
+    <marker id="d2" markerWidth="8" markerHeight="7" refX="1" refY="3.5" orient="auto"><path d="M8,0 L0,3.5 L8,7 z" fill="#e65100"/></marker>
+    <marker id="p1" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 z" fill="#6a1b9a"/></marker>
+    <marker id="p2" markerWidth="8" markerHeight="7" refX="1" refY="3.5" orient="auto"><path d="M8,0 L0,3.5 L8,7 z" fill="#6a1b9a"/></marker>
+  </defs>
+  <rect width="1120" height="640" fill="#ffffff"/>
+
+  <text x="560" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#111">ATEŞLEME ZAMANININ HESABI</text>
+  <text x="560" y="50" text-anchor="middle" font-size="12.5" fill="#666">ZCD kenarından SCR ateşlemesine — α = 30° örneği</text>
+
+  <!-- dikey kilavuzlar -->
+  <g stroke-width="1.3" stroke-dasharray="4,4">
+    <line x1="200" y1="88" x2="200" y2="600" stroke="#1565c0"/>
+    <line x1="227" y1="88" x2="227" y2="600" stroke="#e65100"/>
+    <line x1="350" y1="88" x2="350" y2="600" stroke="#999"/>
+    <line x1="500" y1="88" x2="500" y2="600" stroke="#2e7d32"/>
+    <line x1="800" y1="88" x2="800" y2="600" stroke="#999"/>
+    <line x1="850" y1="88" x2="850" y2="600" stroke="#999"/>
+  </g>
+
+  <!-- ============ SINUS ============ -->
+  <line x1="130" y1="170" x2="1102" y2="170" stroke="#bbb" stroke-width="1.2"/>
+  <g clip-path="url(#cs)">
+    <path d="M-700,170 C-400,237 -100,237 200,170 C500,103 800,103 1100,170" fill="none" stroke="#c62828" stroke-width="2.6"/>
+  </g>
+  <text x="120" y="122" text-anchor="end" font-size="12.5" font-weight="bold" fill="#c62828">v_R</text>
+  <text x="120" y="138" text-anchor="end" font-size="10" fill="#999">faz gerilimi</text>
+
+  <!-- olu bant bolgesi -->
+  <rect x="200" y="88" width="27" height="132" fill="#ffe0b2" opacity="0.55"/>
+
+  <!-- ============ ZCD ============ -->
+  <path d="M130,272 L227,272 L227,304 L1102,304" fill="none" stroke="#e65100" stroke-width="2.6"/>
+  <text x="120" y="292" text-anchor="end" font-size="12.5" font-weight="bold" fill="#e65100">ZCD_R</text>
+  <circle cx="227" cy="288" r="5" fill="#e65100"/>
+  <text x="238" y="262" font-size="11" font-weight="bold" fill="#e65100">ölçülen kenar</text>
+
+  <!-- ============ GATE T1 ============ -->
+  <rect x="500" y="356" width="350" height="34" fill="#c8e6c9" opacity="0.5"/>
+  <path d="M130,390 L500,390 L500,356 L850,356 L850,390 L1102,390" fill="none" stroke="#2e7d32" stroke-width="2.6"/>
+  <text x="120" y="378" text-anchor="end" font-size="12.5" font-weight="bold" fill="#2e7d32">T1 gate</text>
+  <text x="120" y="394" text-anchor="end" font-size="10" fill="#999">D5 pini</text>
+  <text x="660" y="378" text-anchor="middle" font-size="12" font-weight="bold" fill="#1b5e20">70° darbe</text>
+
+  <!-- ============ GATE T2 ============ -->
+  <rect x="800" y="440" width="302" height="34" fill="#c8e6c9" opacity="0.5"/>
+  <path d="M130,474 L800,474 L800,440 L1102,440" fill="none" stroke="#2e7d32" stroke-width="2.6"/>
+  <text x="120" y="462" text-anchor="end" font-size="12.5" font-weight="bold" fill="#2e7d32">T2 gate</text>
+  <text x="120" y="478" text-anchor="end" font-size="10" fill="#999">D6 pini</text>
+  <text x="975" y="462" text-anchor="middle" font-size="11" fill="#1b5e20">(60° sonra ateşlenir)</text>
+
+  <!-- ORTUSME -->
+  <rect x="800" y="350" width="50" height="130" fill="#ffcdd2" opacity="0.6" stroke="#c62828" stroke-width="1.5"/>
+  <text x="825" y="504" text-anchor="middle" font-size="11" font-weight="bold" fill="#c62828">örtüşme</text>
+  <text x="825" y="518" text-anchor="middle" font-size="10.5" fill="#c62828">iki SCR birlikte</text>
+
+  <!-- ============ OLCU OKLARI ============ -->
+  <line x1="200" y1="236" x2="227" y2="236" stroke="#e65100" stroke-width="1.8" marker-start="url(#d2)" marker-end="url(#d1)"/>
+  <text x="258" y="228" font-size="11.5" font-weight="bold" fill="#e65100">Δt = 0,30 ms   (θ = 5,3°)</text>
+  <text x="258" y="243" font-size="10.5" fill="#999">optokuplörün ölü bandı — yazılım bunu çıkarır</text>
+
+  <line x1="200" y1="556" x2="350" y2="556" stroke="#6a1b9a" stroke-width="1.8" marker-start="url(#p2)" marker-end="url(#p1)"/>
+  <text x="275" y="548" text-anchor="middle" font-size="12" font-weight="bold" fill="#6a1b9a">30°</text>
+  <text x="275" y="576" text-anchor="middle" font-size="10" fill="#6a1b9a">doğal</text>
+  <text x="275" y="589" text-anchor="middle" font-size="10" fill="#6a1b9a">komütasyon</text>
+
+  <line x1="350" y1="556" x2="500" y2="556" stroke="#6a1b9a" stroke-width="1.8" marker-start="url(#p2)" marker-end="url(#p1)"/>
+  <text x="425" y="548" text-anchor="middle" font-size="12" font-weight="bold" fill="#6a1b9a">α = 30°</text>
+  <text x="425" y="576" text-anchor="middle" font-size="10" fill="#6a1b9a">tetikleme</text>
+  <text x="425" y="589" text-anchor="middle" font-size="10" fill="#6a1b9a">açısı</text>
+
+  <line x1="500" y1="556" x2="850" y2="556" stroke="#6a1b9a" stroke-width="1.8" marker-start="url(#p2)" marker-end="url(#p1)"/>
+  <text x="675" y="548" text-anchor="middle" font-size="12" font-weight="bold" fill="#6a1b9a">70°</text>
+  <text x="675" y="576" text-anchor="middle" font-size="10" fill="#6a1b9a">darbe genişliği — 60°'den geniş olmalı</text>
+
+  <!-- nokta etiketleri -->
+  <text x="200" y="618" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#1565c0">t0</text>
+  <text x="200" y="632" text-anchor="middle" font-size="9.5" fill="#1565c0">gerçek sıfır</text>
+  <text x="350" y="618" text-anchor="middle" font-size="10.5" fill="#666">α = 0</text>
+  <text x="500" y="618" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#2e7d32">ATEŞLE</text>
+  <text x="850" y="618" text-anchor="middle" font-size="10.5" fill="#666">kapat</text>
+
+  <!-- formul kutusu -->
+  <rect x="838" y="180" width="252" height="112" rx="6" fill="#f5f5f5" stroke="#bbb" stroke-width="1.4"/>
+  <text x="852" y="202" font-size="12" font-weight="bold" fill="#333">Zamanlama</text>
+  <line x1="852" y1="210" x2="1076" y2="210" stroke="#ddd"/>
+  <text x="852" y="230" font-size="11" fill="#555">t0 = t_kenar <tspan font-weight="bold">∓</tspan> Δt</text>
+  <text x="852" y="252" font-size="11" fill="#555">t_on = t0 + (30° + α)·T/360</text>
+  <text x="852" y="274" font-size="11" fill="#555">t_off = t_on + 70°·T/360</text>
+  <text x="852" y="288" font-size="9.5" font-style="italic" fill="#999">düşen kenarda −, yükselende +</text>
+</svg>

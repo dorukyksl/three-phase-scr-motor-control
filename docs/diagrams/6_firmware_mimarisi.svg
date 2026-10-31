@@ -1,0 +1,117 @@
+<svg viewBox="0 0 1120 740" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="a" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0,0 L9,3.5 L0,7 z" fill="#555"/></marker>
+    <marker id="ab" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0,0 L9,3.5 L0,7 z" fill="#1565c0"/></marker>
+    <marker id="ao" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0,0 L9,3.5 L0,7 z" fill="#e65100"/></marker>
+    <marker id="ag" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0,0 L9,3.5 L0,7 z" fill="#2e7d32"/></marker>
+  </defs>
+  <rect width="1120" height="740" fill="#ffffff"/>
+
+  <text x="560" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#111">FIRMWARE MİMARİSİ — ATmega328P</text>
+  <text x="560" y="50" text-anchor="middle" font-size="12.5" fill="#666">Üç bağımsız yürütme bağlamı · paylaşılan durum üzerinden haberleşir</text>
+
+  <!-- ===== GIRISLER ===== -->
+  <text x="40" y="86" font-size="11.5" font-weight="bold" fill="#888" letter-spacing="1.2">DONANIM GİRİŞLERİ</text>
+  <g>
+    <rect x="40" y="96" width="230" height="58" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+    <text x="56" y="120" font-size="13" font-weight="bold" fill="#0d47a1">ZCD  A1 · A2 · A3</text>
+    <text x="56" y="140" font-size="11" fill="#1565c0">3 bit sektör kodu → PCINT1</text>
+
+    <rect x="290" y="96" width="230" height="58" rx="6" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2"/>
+    <text x="306" y="120" font-size="13" font-weight="bold" fill="#4a148c">TAKO  A0</text>
+    <text x="306" y="140" font-size="11" fill="#6a1b9a">analog gerilim → ADC</text>
+
+    <rect x="540" y="96" width="230" height="58" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="556" y="120" font-size="13" font-weight="bold" fill="#1b5e20">UART RX  D0</text>
+    <text x="556" y="140" font-size="11" fill="#2e7d32">HM-10 · komutlar</text>
+  </g>
+
+  <!-- ===== BAGLAMLAR ===== -->
+  <text x="40" y="196" font-size="11.5" font-weight="bold" fill="#888" letter-spacing="1.2">YÜRÜTME BAĞLAMLARI</text>
+
+  <!-- 1 PCINT1 -->
+  <rect x="40" y="208" width="330" height="230" rx="8" fill="#f4f9ff" stroke="#1565c0" stroke-width="2.4"/>
+  <rect x="40" y="208" width="330" height="34" rx="8" fill="#1565c0"/>
+  <rect x="40" y="230" width="330" height="12" fill="#1565c0"/>
+  <text x="58" y="231" font-size="13.5" font-weight="bold" fill="#fff">① PCINT1 kesmesi</text>
+  <text x="352" y="231" font-size="11" fill="#bbd9f7" text-anchor="end">olay tetiklemeli</text>
+  <g font-size="12" fill="#20344a">
+    <text x="60" y="268">• Sektörü çöz (000/111 geçersiz)</text>
+    <text x="60" y="292">• Gürültü filtresi (çentik → yok say)</text>
+    <text x="60" y="316">• Periyot + ölü bant öz-kalibrasyon</text>
+    <text x="60" y="340">• Sıra / faz kaybı denetimi</text>
+    <text x="60" y="364">• Sektör 0'da <tspan font-weight="bold">burst kararı</tspan> (sigma-delta)</text>
+    <text x="60" y="388">• Ateşleme anını planla</text>
+  </g>
+  <text x="60" y="418" font-size="11" font-style="italic" fill="#5a7fa6">bölme yok — sadece hazır değerler</text>
+
+  <!-- 2 Timer1 -->
+  <rect x="395" y="208" width="330" height="230" rx="8" fill="#fff8f0" stroke="#e65100" stroke-width="2.4"/>
+  <rect x="395" y="208" width="330" height="34" rx="8" fill="#e65100"/>
+  <rect x="395" y="230" width="330" height="12" fill="#e65100"/>
+  <text x="413" y="231" font-size="13.5" font-weight="bold" fill="#fff">② Timer1 kesmesi</text>
+  <text x="707" y="231" font-size="11" fill="#ffd9b3" text-anchor="end">50 µs · periyodik</text>
+  <g font-size="12" fill="#4a3520">
+    <text x="415" y="268">• g_tick++</text>
+    <text x="415" y="292">• 6 kanalı tara: armed &amp; on ≤ tick &lt; off</text>
+    <text x="415" y="316">• Kapı: <tspan font-family="monospace" font-size="11.5">g_fire &amp;&amp; g_burstOn</tspan></text>
+    <text x="415" y="340">• PORTD ve PORTB'ye <tspan font-weight="bold">tek yazma</tspan></text>
+    <text x="415" y="364">• Altı çıkış aynı anda değişir</text>
+  </g>
+  <text x="415" y="418" font-size="11" font-style="italic" fill="#a06a3a">~6 µs · döngü ya da bölme yok</text>
+
+  <!-- 3 ana dongu -->
+  <rect x="750" y="208" width="330" height="230" rx="8" fill="#f3faf4" stroke="#2e7d32" stroke-width="2.4"/>
+  <rect x="750" y="208" width="330" height="34" rx="8" fill="#2e7d32"/>
+  <rect x="750" y="230" width="330" height="12" fill="#2e7d32"/>
+  <text x="768" y="231" font-size="13.5" font-weight="bold" fill="#fff">③ Ana döngü</text>
+  <text x="1062" y="231" font-size="11" fill="#c3e6c9" text-anchor="end">zaman kritik değil</text>
+  <g font-size="12" fill="#20401f">
+    <text x="770" y="268">• Komut ayrıştırıcı (<tspan font-weight="bold">satır tabanlı</tspan>)</text>
+    <text x="770" y="292">• α rampası 5°/sn</text>
+    <text x="770" y="316">• <tspan font-weight="bold">Tako ADC</tspan> → 8× örnek → dev/dk</text>
+    <text x="770" y="340">• 32 bit bölmeler (g_dly, g_wid)</text>
+    <text x="770" y="364">• Telemetri 5 Hz · heartbeat emniyeti</text>
+    <text x="770" y="388">• Kenar kaybı bekçisi (25 ms)</text>
+  </g>
+  <text x="770" y="418" font-size="11" font-style="italic" fill="#5a8a5c">ağır iş buraya taşındı</text>
+
+  <!-- oklar giris -> baglam -->
+  <path d="M155,158 L155,204" fill="none" stroke="#1565c0" stroke-width="2" marker-end="url(#ab)"/>
+  <path d="M405,158 L405,180 L915,180 L915,204" fill="none" stroke="#6a1b9a" stroke-width="2" marker-end="url(#ag)"/>
+  <path d="M655,158 L655,190 L860,190 L860,204" fill="none" stroke="#2e7d32" stroke-width="2" marker-end="url(#ag)"/>
+
+  <!-- ===== PAYLASILAN DURUM ===== -->
+  <rect x="40" y="472" width="1040" height="96" rx="8" fill="#faf6fd" stroke="#6a1b9a" stroke-width="2.4" stroke-dasharray="7,4"/>
+  <text x="60" y="497" font-size="13" font-weight="bold" fill="#4a148c">PAYLAŞILAN DURUM  (volatile)</text>
+  <g font-size="11.5" fill="#5b3a6b" font-family="monospace">
+    <text x="60" y="522">g_tick · g_period · g_dcorr · g_sync</text>
+    <text x="400" y="522">g_on[6] · g_off[6] · g_armed[6]</text>
+    <text x="720" y="522">g_dly · g_wid</text>
+    <text x="60" y="546">g_fire · g_burstOn · g_burstAcc</text>
+    <text x="400" y="546">g_alphaTarget · g_duty · g_ctrlMode</text>
+    <text x="720" y="546">g_rpm · g_tachoAdc</text>
+  </g>
+
+  <path d="M205,442 L205,468" fill="none" stroke="#6a1b9a" stroke-width="1.8" marker-end="url(#a)"/>
+  <path d="M560,468 L560,442" fill="none" stroke="#6a1b9a" stroke-width="1.8" marker-end="url(#a)"/>
+  <path d="M915,442 L915,468" fill="none" stroke="#6a1b9a" stroke-width="1.8" marker-end="url(#a)"/>
+  <text x="215" y="460" font-size="10.5" fill="#6a1b9a">yazar</text>
+  <text x="500" y="460" font-size="10.5" fill="#6a1b9a" text-anchor="end">okur</text>
+  <text x="925" y="460" font-size="10.5" fill="#6a1b9a">yazar/okur</text>
+
+  <!-- ===== CIKISLAR ===== -->
+  <text x="40" y="606" font-size="11.5" font-weight="bold" fill="#888" letter-spacing="1.2">DONANIM ÇIKIŞLARI</text>
+  <rect x="40" y="618" width="500" height="58" rx="6" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+  <text x="58" y="642" font-size="13" font-weight="bold" fill="#b71c1c">GATE  D5 · D6 · D7 · D8 · D9 · D10</text>
+  <text x="58" y="662" font-size="11" fill="#c62828">→ ULN2003 → MOC3023 ×6 → BT151 ×6</text>
+
+  <rect x="560" y="618" width="520" height="58" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="578" y="642" font-size="13" font-weight="bold" fill="#1b5e20">UART TX  D1</text>
+  <text x="578" y="662" font-size="11" fill="#2e7d32">→ HM-10 → iOS uygulaması · 5 Hz CSV telemetri</text>
+
+  <path d="M290,568 L290,614" fill="none" stroke="#c62828" stroke-width="2" marker-end="url(#a)"/>
+  <path d="M820,568 L820,614" fill="none" stroke="#2e7d32" stroke-width="2" marker-end="url(#a)"/>
+
+  <text x="560" y="712" text-anchor="middle" font-size="11.5" font-style="italic" fill="#777">Ağır işlemler kesmelerden çıkarıldı: 32 bit bölmeler kesmede kalınca Timer1 bloke oluyor ve tik kayboluyordu.</text>
+</svg>

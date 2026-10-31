@@ -1,0 +1,10 @@
+* text=auto
+*.ino text eol=lf
+*.swift text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.pdf binary
+*.png binary
+*.jpg binary
+*.mp4 binary
+

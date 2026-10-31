@@ -1,0 +1,158 @@
+<svg viewBox="0 0 1120 800" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,sans-serif">
+  <defs>
+    <clipPath id="cw"><rect x="160" y="360" width="900" height="140"/></clipPath>
+    <marker id="na" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L9,3.5 L0,7 z" fill="#e65100"/>
+    </marker>
+  </defs>
+  <rect width="1120" height="800" fill="#ffffff"/>
+
+  <text x="560" y="30" text-anchor="middle" font-size="21" font-weight="bold" fill="#111">SIFIR GEÇİŞ ALGILAMA VE MUTLAK FAZ KODU</text>
+  <text x="560" y="50" text-anchor="middle" font-size="12.5" fill="#666">Seri diyot sayesinde her kanal 180°'lik seviye verir → üçü birlikte 6 benzersiz sektör kodu</text>
+
+  <!-- ============ DEVRE (bir kanal) ============ -->
+  <text x="60" y="86" font-size="13" font-weight="bold" fill="#333">Bir kanalın devresi (3 kanal aynı)</text>
+  <line x1="60" y1="94" x2="1060" y2="94" stroke="#eee" stroke-width="1.5"/>
+
+  <line x1="70" y1="150" x2="140" y2="150" stroke="#c62828" stroke-width="2.4"/>
+  <text x="66" y="146" text-anchor="end" font-size="13.5" font-weight="bold" fill="#c62828">R</text>
+  <text x="66" y="162" text-anchor="end" font-size="10" fill="#999">faz</text>
+  <rect x="140" y="136" width="52" height="28" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+  <text x="166" y="126" text-anchor="middle" font-size="12" font-weight="bold" fill="#c62828">15 kΩ</text>
+  <text x="166" y="182" text-anchor="middle" font-size="10" fill="#999">2 W · 4 mA</text>
+  <line x1="192" y1="150" x2="236" y2="150" stroke="#c62828" stroke-width="2.4"/>
+  <polygon points="236,136 236,164 264,150" fill="#ffcdd2" stroke="#b71c1c" stroke-width="2.2"/>
+  <line x1="264" y1="134" x2="264" y2="166" stroke="#b71c1c" stroke-width="3.4"/>
+  <text x="250" y="126" text-anchor="middle" font-size="12" font-weight="bold" fill="#b71c1c">1N4007</text>
+  <text x="250" y="182" text-anchor="middle" font-size="10" fill="#b71c1c">yalnız pozitif yarım</text>
+  <line x1="264" y1="150" x2="330" y2="150" stroke="#c62828" stroke-width="2.4"/>
+
+  <line x1="70" y1="248" x2="330" y2="248" stroke="#333" stroke-width="2.4"/>
+  <text x="66" y="252" text-anchor="end" font-size="13.5" font-weight="bold" fill="#333">N</text>
+
+  <!-- LTV -->
+  <rect x="330" y="112" width="180" height="172" rx="7" fill="#f8f5fb" stroke="#6a1b9a" stroke-width="2.6"/>
+  <text x="420" y="106" text-anchor="middle" font-size="15" font-weight="bold" fill="#4a148c">LTV-844</text>
+  <line x1="374" y1="126" x2="374" y2="270" stroke="#6a1b9a" stroke-width="0"/>
+  <polygon points="362,164 386,164 374,186" fill="#bbdefb" stroke="#0d47a1" stroke-width="1.8"/>
+  <line x1="362" y1="186" x2="386" y2="186" stroke="#0d47a1" stroke-width="2.4"/>
+  <polygon points="362,232 386,232 374,210" fill="#bbdefb" stroke="#0d47a1" stroke-width="1.8"/>
+  <line x1="362" y1="210" x2="386" y2="210" stroke="#0d47a1" stroke-width="2.4"/>
+  <line x1="374" y1="150" x2="374" y2="164" stroke="#333" stroke-width="2"/>
+  <line x1="374" y1="232" x2="374" y2="248" stroke="#333" stroke-width="2"/>
+  <line x1="374" y1="186" x2="374" y2="210" stroke="#333" stroke-width="2"/>
+  <text x="342" y="204" text-anchor="end" font-size="9.5" fill="#0d47a1">AC</text>
+  <text x="342" y="216" text-anchor="end" font-size="9.5" fill="#0d47a1">giriş</text>
+  <text x="338" y="146" font-size="10.5" font-weight="bold" fill="#333">1</text>
+  <text x="338" y="262" font-size="10.5" font-weight="bold" fill="#333">2</text>
+  <line x1="440" y1="180" x2="452" y2="192" stroke="#f57f17" stroke-width="1.6"/>
+  <line x1="440" y1="192" x2="452" y2="204" stroke="#f57f17" stroke-width="1.6"/>
+  <line x1="470" y1="150" x2="470" y2="186" stroke="#1565c0" stroke-width="2.2"/>
+  <path d="M462,186 A10,10 0 0,0 462,214" fill="none" stroke="#1565c0" stroke-width="2.2"/>
+  <line x1="462" y1="186" x2="462" y2="214" stroke="#1565c0" stroke-width="2.2"/>
+  <line x1="470" y1="214" x2="470" y2="248" stroke="#1565c0" stroke-width="2.2"/>
+  <text x="486" y="146" font-size="10.5" font-weight="bold" fill="#333">16</text>
+  <text x="486" y="262" font-size="10.5" font-weight="bold" fill="#333">15</text>
+  <line x1="510" y1="150" x2="600" y2="150" stroke="#1565c0" stroke-width="2.2"/>
+  <line x1="470" y1="248" x2="510" y2="248" stroke="#1565c0" stroke-width="2.2"/>
+  <line x1="510" y1="248" x2="560" y2="248" stroke="#1565c0" stroke-width="2.2"/>
+  <line x1="548" y1="256" x2="572" y2="256" stroke="#1565c0" stroke-width="2.4"/>
+  <line x1="553" y1="262" x2="567" y2="262" stroke="#1565c0" stroke-width="2.4"/>
+  <line x1="557" y1="268" x2="563" y2="268" stroke="#1565c0" stroke-width="2.4"/>
+  <line x1="560" y1="248" x2="560" y2="256" stroke="#1565c0" stroke-width="2.2"/>
+  <text x="584" y="266" font-size="11" fill="#1565c0">Arduino GND</text>
+
+  <!-- pull-up + Arduino -->
+  <circle cx="600" cy="150" r="4.5" fill="#1565c0"/>
+  <line x1="600" y1="150" x2="600" y2="128" stroke="#1565c0" stroke-width="2.2"/>
+  <rect x="586" y="90" width="28" height="38" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <line x1="600" y1="90" x2="600" y2="74" stroke="#1565c0" stroke-width="2.2"/>
+  <line x1="578" y1="74" x2="622" y2="74" stroke="#1565c0" stroke-width="2.8"/>
+  <text x="630" y="78" font-size="12" font-weight="bold" fill="#1565c0">5 V</text>
+  <text x="630" y="108" font-size="12" font-weight="bold" fill="#1565c0">10 kΩ</text>
+  <text x="630" y="123" font-size="10" fill="#999">pull-up</text>
+  <line x1="600" y1="150" x2="700" y2="150" stroke="#1565c0" stroke-width="2.2"/>
+  <rect x="700" y="118" width="150" height="64" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="2.2"/>
+  <text x="775" y="144" text-anchor="middle" font-size="13" font-weight="bold" fill="#0d47a1">ARDUINO A1</text>
+  <text x="775" y="164" text-anchor="middle" font-size="11" fill="#1565c0">PCINT1 kesmesi</text>
+
+  <rect x="880" y="104" width="196" height="118" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.6"/>
+  <text x="894" y="126" font-size="12" font-weight="bold" fill="#1b5e20">Mantık</text>
+  <text x="894" y="148" font-size="11" fill="#2e7d32">faz <tspan font-weight="bold">pozitif</tspan> → LED yanar</text>
+  <text x="894" y="165" font-size="11" fill="#2e7d32">→ transistör iletir → <tspan font-weight="bold">0</tspan></text>
+  <text x="894" y="188" font-size="11" fill="#2e7d32">faz <tspan font-weight="bold">negatif</tspan> → LED söner</text>
+  <text x="894" y="205" font-size="11" fill="#2e7d32">→ pull-up çeker → <tspan font-weight="bold">1</tspan></text>
+
+  <!-- ============ DALGA SEKILLERI ============ -->
+  <text x="60" y="330" font-size="13" font-weight="bold" fill="#333">Bir şebeke çevrimi (20 ms) — üç kanal ve oluşan sektör kodu</text>
+  <line x1="60" y1="338" x2="1060" y2="338" stroke="#eee" stroke-width="1.5"/>
+
+  <!-- sektor sinirlari -->
+  <g stroke="#ddd" stroke-width="1.2" stroke-dasharray="4,4">
+    <line x1="160" y1="360" x2="160" y2="742"/><line x1="310" y1="360" x2="310" y2="742"/>
+    <line x1="460" y1="360" x2="460" y2="742"/><line x1="610" y1="360" x2="610" y2="742"/>
+    <line x1="760" y1="360" x2="760" y2="742"/><line x1="910" y1="360" x2="910" y2="742"/>
+    <line x1="1060" y1="360" x2="1060" y2="742"/>
+  </g>
+
+  <!-- sinusler -->
+  <line x1="160" y1="430" x2="1060" y2="430" stroke="#bbb" stroke-width="1.2"/>
+  <g clip-path="url(#cw)" fill="none" stroke-width="2.4">
+    <path d="M160,430 C310,374 460,374 610,430 C760,486 910,486 1060,430" stroke="#c62828"/>
+    <path d="M10,430 C160,486 310,486 460,430 C610,374 760,374 910,430 C1060,486 1210,486 1360,430" stroke="#2e7d32"/>
+    <path d="M-140,430 C10,374 160,374 310,430 C460,486 610,486 760,430 C910,374 1060,374 1210,430" stroke="#1565c0"/>
+  </g>
+  <text x="150" y="382" text-anchor="end" font-size="12" font-weight="bold" fill="#c62828">R</text>
+  <text x="150" y="398" text-anchor="end" font-size="12" font-weight="bold" fill="#2e7d32">S</text>
+  <text x="150" y="414" text-anchor="end" font-size="12" font-weight="bold" fill="#1565c0">T</text>
+
+  <!-- ZCD_R -->
+  <path d="M160,550 L610,550 L610,516 L1060,516" fill="none" stroke="#c62828" stroke-width="2.6"/>
+  <text x="150" y="538" text-anchor="end" font-size="12" font-weight="bold" fill="#c62828">ZCD_R</text>
+  <text x="1068" y="520" font-size="10" fill="#999">1</text><text x="1068" y="554" font-size="10" fill="#999">0</text>
+  <!-- ZCD_S -->
+  <path d="M160,578 L460,578 L460,612 L910,612 L910,578 L1060,578" fill="none" stroke="#2e7d32" stroke-width="2.6"/>
+  <text x="150" y="600" text-anchor="end" font-size="12" font-weight="bold" fill="#2e7d32">ZCD_S</text>
+  <text x="1068" y="582" font-size="10" fill="#999">1</text><text x="1068" y="616" font-size="10" fill="#999">0</text>
+  <!-- ZCD_T -->
+  <path d="M160,674 L310,674 L310,640 L760,640 L760,674 L1060,674" fill="none" stroke="#1565c0" stroke-width="2.6"/>
+  <text x="150" y="662" text-anchor="end" font-size="12" font-weight="bold" fill="#1565c0">ZCD_T</text>
+  <text x="1068" y="644" font-size="10" fill="#999">1</text><text x="1068" y="678" font-size="10" fill="#999">0</text>
+
+  <!-- olu bant notu -->
+  <path d="M660,486 L620,540" fill="none" stroke="#e65100" stroke-width="1.6" marker-end="url(#na)"/>
+  <rect x="628" y="452" width="286" height="34" fill="#fff8e1" stroke="#f57f17" stroke-width="1.3" rx="4"/>
+  <text x="638" y="466" font-size="10.5" fill="#e65100">Gerçek kenar ölü bant kadar kayar: <tspan font-weight="bold">θ = 5,3°</tspan></text>
+  <text x="638" y="479" font-size="10.5" fill="#e65100">Yazılım <tspan font-weight="bold">Δt = 0,30 ms</tspan> ile düzeltir</text>
+
+  <!-- sektor tablosu -->
+  <rect x="160" y="692" width="150" height="50" fill="#fff3e0" stroke="#e65100" stroke-width="1.4"/>
+  <rect x="310" y="692" width="150" height="50" fill="#fff" stroke="#e65100" stroke-width="1.4"/>
+  <rect x="460" y="692" width="150" height="50" fill="#fff3e0" stroke="#e65100" stroke-width="1.4"/>
+  <rect x="610" y="692" width="150" height="50" fill="#fff" stroke="#e65100" stroke-width="1.4"/>
+  <rect x="760" y="692" width="150" height="50" fill="#fff3e0" stroke="#e65100" stroke-width="1.4"/>
+  <rect x="910" y="692" width="150" height="50" fill="#fff" stroke="#e65100" stroke-width="1.4"/>
+
+  <text x="235" y="712" text-anchor="middle" font-size="14" font-weight="bold" fill="#111" font-family="monospace">010</text>
+  <text x="385" y="712" text-anchor="middle" font-size="14" font-weight="bold" fill="#111" font-family="monospace">011</text>
+  <text x="535" y="712" text-anchor="middle" font-size="14" font-weight="bold" fill="#111" font-family="monospace">001</text>
+  <text x="685" y="712" text-anchor="middle" font-size="14" font-weight="bold" fill="#111" font-family="monospace">101</text>
+  <text x="835" y="712" text-anchor="middle" font-size="14" font-weight="bold" fill="#111" font-family="monospace">100</text>
+  <text x="985" y="712" text-anchor="middle" font-size="14" font-weight="bold" fill="#111" font-family="monospace">110</text>
+
+  <text x="235" y="733" text-anchor="middle" font-size="12" font-weight="bold" fill="#e65100">T1 · R+</text>
+  <text x="385" y="733" text-anchor="middle" font-size="12" font-weight="bold" fill="#e65100">T2 · T−</text>
+  <text x="535" y="733" text-anchor="middle" font-size="12" font-weight="bold" fill="#e65100">T3 · S+</text>
+  <text x="685" y="733" text-anchor="middle" font-size="12" font-weight="bold" fill="#e65100">T4 · R−</text>
+  <text x="835" y="733" text-anchor="middle" font-size="12" font-weight="bold" fill="#e65100">T5 · T+</text>
+  <text x="985" y="733" text-anchor="middle" font-size="12" font-weight="bold" fill="#e65100">T6 · S−</text>
+
+  <text x="160" y="762" font-size="10.5" fill="#999">0°</text>
+  <text x="310" y="762" font-size="10.5" fill="#999">60°</text>
+  <text x="460" y="762" font-size="10.5" fill="#999">120°</text>
+  <text x="610" y="762" font-size="10.5" fill="#999">180°</text>
+  <text x="760" y="762" font-size="10.5" fill="#999">240°</text>
+  <text x="910" y="762" font-size="10.5" fill="#999">300°</text>
+  <text x="1050" y="762" font-size="10.5" fill="#999">360°</text>
+  <text x="620" y="786" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#2e7d32">000 ve 111 geçersizdir → faz kaybı tespiti bedava gelir</text>
+</svg>
